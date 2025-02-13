@@ -1,4 +1,4 @@
-name: UFT Dev test - CSDP-GitHub Actions integration
+name: UFT Dev test
 
 on:
   [workflow_dispatch]
