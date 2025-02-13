@@ -16,10 +16,10 @@ jobs:
     name: OctaneIntegration#${{github.event.action}}#${{github.event.workflow_run.id}}
     steps:
       - name: GitHub Actions ALM Octane Integration
-        uses: MicroFocus/alm-octane-github-actions-integration@v25.1.1
+        uses: MicroFocus/alm-octane-github-actions-integration
         id: gitHubActionsIntegration
         with:
-          octaneUrl: 'https://almoctane-ams.saas.microfocus.com/ui/?p=468005/31002'
+          octaneUrl: 'https://almoctane-ams.saas.microfocus.com'
           octaneSharedSpace: 468005
           octaneWorkspace: 31002
           octaneClientId: ${{secrets.ALM_OCTANE_CLIENT_ID}}
