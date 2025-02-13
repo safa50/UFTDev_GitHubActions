@@ -2,7 +2,7 @@ name: GitHub Actions-CSDP integration
 
 on:
   workflow_run:
-    workflows: [CI - JUnit Calculator Test]
+    workflows: [UFT Dev test]
     types: [requested, completed]
   pull_request:
     types: [opened, edited, closed, reopened]
@@ -12,20 +12,20 @@ env:
 
 jobs:
   octane_integration_job:
-    runs-on: octane
+    runs-on: csdp
     name: OctaneIntegration#${{github.event.action}}#${{github.event.workflow_run.id}}
     steps:
       - name: GitHub Actions ALM Octane Integration
         uses: MicroFocus/alm-octane-github-actions-integration@v23.3.0
         id: gitHubActionsIntegration
         with:
-          octaneUrl: 'http://nimbusserver.aos.com:8085/'
-          octaneSharedSpace: 1001
-          octaneWorkspace: 1002
+          octaneUrl: 'https://almoctane-ams.saas.microfocus.com/'
+          octaneSharedSpace: 468005
+          octaneWorkspace: 31002
           octaneClientId: ${{secrets.ALM_OCTANE_CLIENT_ID}}
           octaneClientSecret: ${{secrets.ALM_OCTANE_CLIENT_SECRET}}
           githubToken: ${{secrets.GITHUB_TOKEN}}
-          serverBaseUrl: https://github.com/safa50/Calculator
+          serverBaseUrl: https://github.com/safa50/UFTDev_GitHubActions
           pipelineNamePattern: '${workflow_name}'
           unitTestResultsGlobPattern: "**/*.xml"
           #gherkinTestResultsGlobPattern: <pattern_for_gherkin_test_result_path>
