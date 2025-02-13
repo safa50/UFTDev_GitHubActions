@@ -19,7 +19,7 @@ jobs:
         uses: MicroFocus/alm-octane-github-actions-integration@v25.1.1
         id: gitHubActionsIntegration
         with:
-          octaneUrl: 'https://almoctane-ams.saas.microfocus.com/'
+          octaneUrl: 'https://almoctane-ams.saas.microfocus.com/ui/?p=468005/31002'
           octaneSharedSpace: 468005
           octaneWorkspace: 31002
           octaneClientId: ${{secrets.ALM_OCTANE_CLIENT_ID}}
