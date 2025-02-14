@@ -3,7 +3,7 @@ name: GitHub Actions-CSDP integration
 on:
   workflow_run:
     workflows: [UFT Dev test]
-    types: [completed]
+    types: [requested, in_progress, completed]
   pull_request:
     types: [opened, edited, closed, reopened]
 
