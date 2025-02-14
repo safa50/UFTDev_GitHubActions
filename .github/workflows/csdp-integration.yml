@@ -29,6 +29,3 @@ jobs:
           pipelineNamePattern: '${workflow_name}'
           unitTestResultsGlobPattern: "**/*.xml"
           #gherkinTestResultsGlobPattern: <pattern_for_gherkin_test_result_path>
-      - name: Log workflow execution parameters
-        run: |
-          echo "execution_parameter:: $(echo '${{ toJson(github.event.inputs) }}' | jq -c .)"
